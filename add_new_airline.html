@@ -1,0 +1,91 @@
+
+
+
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Gogo Video Service</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Le styles -->
+        <link href="static/css/bootstrap.css" rel="stylesheet">
+        <link href="static/css/videoService.css" rel="stylesheet">
+        <link href="static/css/checkbox.css" rel="stylesheet">
+
+        <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="static/css/portalService.css" rel="stylesheet">
+        <link href="static/css/videoService.css" rel="stylesheet">
+
+        <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="static/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="static/ico/apple-touch-icon-57-precomposed.png">
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <div id="headerContent">
+                    <div id="logo">
+                        <a href="/tail_info">Gogo</a>
+                    </div>
+                    <div id="header-account">
+                        <!-- <a id="btn-signin" href="#">Sign In</a>  -->
+                    </div>
+                </div>
+        </div>                
+
+        <div id="portalUtilityWrap">
+            <div class="span5">
+
+                <h1>VIDEO SERVICE</h1>
+		  <br>
+		  <br>
+		  <br /> <br />
+				<div><font color="red"><h3></h3></font> </div>
+                <fieldset>
+                    <form id="airline" action="/saveAirline" method="post">
+
+                        
+                               <div class="control-group">
+                                    <label for="airlineCode">Airline Code</label>
+                                    <input id="airlineCode" name="airlineCode" placeholder="Airline Code" type="text" value=""/>
+                                </div>
+                        
+                        
+                        
+                               <div class="control-group">
+                                    <label for="airlineName">Airline Name</label>
+                                    <input id="airlineName" name="airlineName" class="input-large" placeholder="Airline Name" type="text" value=""/>
+                                </div>
+                        
+
+                        
+                                <div class="control-group">
+                                    <label for="activeStatus">Active Status</label>
+
+                                        <div class="controls">
+                                        <select id="activeStatus" name="activeStatus">
+                                            <option value="true">ON</option>
+                                            <option value="false">OFF</option>
+                                        </select><br />
+                                    </div>
+                                </div>
+                        
+
+                       
+			   <br />		
+                        <input type="submit" onclick="return validateForm();" value="Submit" />
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

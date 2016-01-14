@@ -1,0 +1,158 @@
+html, body { 
+    font-family: helvetica,arial;
+    height: auto;
+    min-height: 100%;
+}
+body:before {
+    content: " ";
+    float: left;
+    height: 100%;
+    margin-top: -32767px;
+    width: 0;
+}
+body {
+    background: url("../img/BG_purchasepath.png") repeat-x scroll 0 0 #FFFFFF;
+	line-height: 1;
+}
+div, p, span {
+    color: #414042;
+    font-family: helvetica,arial;
+}
+a {
+    font-family: helvetica,arial,sans-serif;
+    outline: medium none;
+    text-decoration: underline;
+}
+#wrap, #header, #content {
+    min-width: 320px !important;
+}
+#wrap {
+    font-size: 12px;
+    height: auto;
+    margin: 0 auto;
+    min-height: 100%;
+    width: 100%;
+}
+#wrap:after {
+    clear: both;
+}
+#wrap:before, #wrap:after {
+    content: " ";
+    display: table;
+    height: 10px;
+    left: -999px;
+    position: absolute;
+    top: -999px;
+    width: auto;
+}
+#header {
+    box-shadow: -2px 8px 6px -6px #888888;
+}
+#header, #headerContent, #logo, #header-account {
+    position: relative;
+}
+#header {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 85px;
+}
+#headerContent {
+    margin: 0 auto;
+    width: 955px;
+}
+#logo {
+    float: left;
+    margin: 8px;
+    width: 320px;
+}
+#logo a {
+    background: url("../img/logo_RETINA.png") no-repeat scroll 0 0 / 320px auto transparent;
+	text-indent: -9999px;
+    display: block;
+    height: 65px;	
+}
+
+#header-account {
+    clear: none;
+    float: right;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: medium none;
+    border-top: medium none;
+    padding: 18px 0;
+
+}
+
+#header-account a#btn-signin, input[type="submit"] {
+    background: url("../img/submit_BG.png") repeat-x scroll 0 -32px #CE171B;
+	border: 1px solid #BF1F2D;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#header-account a {
+    margin-left: 20px;
+    padding: 4px 10px;
+	display: block;
+    float: right;
+}
+
+#portalUtilityWrap{height:auto;margin:0 auto;padding:0 8px;background:#fff;}
+#content,#portalUtilityWrap{min-height:500px;height:auto;}
+#wrap,#header,#content,#portalUtilityWrap,#footer_wrap{min-width:320px !important;}
+#portalUtilityWrap{width:955px;margin:0 auto;}
+
+
+.span5 h1 {
+    background: none repeat scroll 0 0 #81C5E2;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: normal;    
+    padding: 10px;
+}
+h2 {
+    font-size: 24px;
+    line-height: 36px;
+}
+h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    margin: 0;
+    text-rendering: optimizelegibility;
+}
+h4 {
+    font-size: 14px;
+}
+h4, h5, h6 {
+    line-height: 18px;
+}
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #DDDDDD;
+    border-image: none;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin: 18px 0;
+}
+label, .iphone-toggle-buttons label {
+    display: inline-block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+th {
+	width: 470px;
+	font-size: 14px;
+    text-align: left;
+}
+td {
+	font-size: 12px;
+}
+.dataTables_filter {
+margin-bottom: 10px;
+}

@@ -1,0 +1,170 @@
+
+
+
+
+
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Gogo Video Service</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Le styles -->
+        <link href="static/css/bootstrap.css" rel="stylesheet">
+        <link href="static/css/videoService.css" rel="stylesheet">
+        <link href="static/css/checkbox.css" rel="stylesheet">
+
+<!--
+        <style>
+            body {
+                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+            }
+            table.hovertable {
+                font-family: verdana,arial,sans-serif;
+                font-size:11px;
+                color:#333333;
+                border-width: 1px;
+                border-color: #999999;
+                border-collapse: collapse;
+            }
+            table.hovertable th {
+                background-color:#c3dde0;
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #a9c6c9;
+            }
+            table.hovertable tr {
+                background-color:#d4e3e5;
+            }
+            table.hovertable td {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #a9c6c9;
+            }		
+        </style>-->
+        <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="static/css/portalService.css" rel="stylesheet">
+        <link href="static/css/videoService.css" rel="stylesheet">
+
+
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="static/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="static/ico/apple-touch-icon-57-precomposed.png">
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <div id="headerContent">
+                    <div id="logo">
+                        <a href="/tail_info">Gogo</a>
+                    </div>
+                    <div id="header-account">
+                        <!-- <a id="btn-signin" href="#">Sign In</a>  -->
+                    </div>
+                </div>
+        </div>                
+
+        <div id="portalUtilityWrap">
+            <div class="span5">
+
+                <h1>VIDEO SERVICE</h1>
+		  <br>
+		  <br>
+                <div><font color="red"><h3></h3></font> </div>
+                <fieldset>
+                    <form id="tailInfo" action="/submit_tail_info" method="post">
+
+                        
+                               <div class="control-group">
+                                    <label for="tailNumber">Tail Number</label>
+                                    <input id="tailNumber" name="tailNumber" class="input-large" placeholder="Tail Number" type="text" value=""/>
+                                </div>
+                        
+
+                        
+                               <div class="control-group">
+                                    <label for="airlineCode">Airline Code</label>
+                                    <select id="airlineCode" name="airlineCode">
+                                      
+                                        <option value=""></option>
+                                      
+                                        <option value="AA">American Airlines</option>
+                                      
+                                        <option value="AF">Air Finland</option>
+                                      
+                                        <option value="AK">Alaskan</option>
+                                      
+                                        <option value="AMX">AIR MEXICO</option>
+                                      
+                                        <option value="TST">Test Airline</option>
+                                      
+                                        <option value="UA">United Airlines</option>
+                                      
+                                    </select><br />
+                                </div>
+                        
+
+                        
+                                <div class="control-group">
+                                    <label for="activeStatus">Active Status</label>
+
+                                        <div class="controls">
+                                        <select id="activeStatus" name="activeStatus">
+                                            <option value="true">ON</option>
+                                            <option value="false">OFF</option>
+                                        </select><br />
+                                    </div>
+                                </div>
+                        
+
+                       
+                            <div class="control-group">
+                               <label for="source">Source</label>
+                                   <div class="controls">
+                                       <select id="source" name="source">
+                                           <option value="ABP">ABP</option>
+                                           <option value="MANUAL">Manual</option>
+                                           <option value="Bulk">Bulk</option>
+                                       </select><br />
+                                   </div>
+                           </div>
+                       
+
+                        
+                            <div class="control-group">
+                                <label for="locale">Locale</label>
+
+                                    <div class="controls">
+                                    <select id="locale" name="locale">
+                                        <option value="en_US">en_US</option>
+                                        <option value="fr_CA">fr_CA</option>
+                                        <option value="ja_JP">ja_JP</option>
+                                    </select><br />
+                                </div>
+                            </div>
+                        
+			   <br />		
+                        <input type="submit" onclick="return validateForm();" value="Submit" />
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

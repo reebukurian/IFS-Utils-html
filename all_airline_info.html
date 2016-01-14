@@ -1,0 +1,339 @@
+
+
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portal Utility Service - Video Flag</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Le styles -->
+<link href="static/css/bootstrap.css"
+	rel="stylesheet">
+<link href="static/css/videoService.css"
+	rel="stylesheet">
+<link href="static/css/checkbox.css"
+	rel="stylesheet">
+<link href="static/css/portalService.css"
+	rel="stylesheet">
+<style type="text/css" title="currentStyle">
+@import "static/css/demo_page.css";
+
+@import "static/css/demo_table.css";
+</style>
+<link
+	href="static/css/bootstrap-responsive.css"
+	rel="stylesheet">
+<link href="static/css/portalService.css"
+	rel="stylesheet">
+<link href="static/css/jquery-ui.min.css"
+	rel="stylesheet">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="static/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="static/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="static/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="static/ico/apple-touch-icon-57-precomposed.png">
+
+<script type="text/javascript" language="javascript"
+	src="static/js/jquery.js"></script>
+
+<script type="text/javascript" language="javascript"
+	src="static/js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript"
+	src="static/js/jquery-ui.js"></script>
+<script type="text/javascript" language="javascript"
+	src="static/js/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('#example').dataTable();
+		
+		$(':checkbox').live("click", function() {
+			var $this = $(this);
+			//$this.attr('disabled','true');
+			// $this will contain a reference to the checkbox
+			var request = {
+					'airlineCode': $this.attr("id"),
+					activeStatus:$this.is(':checked')?'true':'false'
+		        }
+			var id = $this.attr("id");
+				$.ajax({
+					type : "POST",
+					url : "/updateAirline",
+					data : request,
+					dataType: 'json'
+				});
+		});
+	  });
+</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div id="headerContent">
+				<div id="logo">
+					<a href="/tail_info">Gogo</a>
+				</div>
+
+				<div id="header-account">
+					Welcome
+					<br/><a href="/j_spring_security_logout"> Logout</a>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content">
+			<div id="portalUtilityWrap">
+				<div class="span5">
+
+					<h1>PORTAL SERVICES - VIDEO AVAILABILITY</h1>
+					<br /> <br />
+					<table cellpadding="0" cellspacing="0" border="0" class="display"
+						id="example" width="100%">
+						<thead>
+							<tr>
+								<th>Airline Code</th>
+								<th>Airline Name</th>
+								<th>Availability</th>
+								<th>Audit</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+							
+							
+								
+								
+								<tr>
+									<td></td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for=""><input
+												type="checkbox" name=""
+												id="" checked='checked' /><span></span></label>
+										</div>
+									</td>
+									<td>
+									<a href="/view_audit?airlineCode=">View Audit</a>
+									</td>
+									<td>
+										
+										<a onclick='javascript:confirm("Do you confirm to Delete this airline")'
+										href="/delete_airline?airlineCode=" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>AA</td>
+									<td>American Airlines</td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="AA"><input
+												type="checkbox" name="AA"
+												id="AA" checked='checked' /><span>AA</span></label>
+										</div>
+									</td>
+									<td>
+									<a href="/view_audit?airlineCode=AA">View Audit</a>
+									</td>
+									<td>
+										
+										<a onclick='javascript:confirm("Do you confirm to Delete this airline")'
+										href="/delete_airline?airlineCode=AA" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>AF</td>
+									<td>Air Finland</td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="AF"><input
+												type="checkbox" name="AF"
+												id="AF"  /><span>AF</span></label>
+										</div>
+									</td>
+									<td>
+									<a href="/view_audit?airlineCode=AF">View Audit</a>
+									</td>
+									<td>
+										
+										<a onclick='javascript:confirm("Do you confirm to Delete this airline")'
+										href="/delete_airline?airlineCode=AF" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>AK</td>
+									<td>Alaskan</td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="AK"><input
+												type="checkbox" name="AK"
+												id="AK" checked='checked' /><span>AK</span></label>
+										</div>
+									</td>
+									<td>
+									<a href="/view_audit?airlineCode=AK">View Audit</a>
+									</td>
+									<td>
+										
+										<a onclick='javascript:confirm("Do you confirm to Delete this airline")'
+										href="/delete_airline?airlineCode=AK" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>AMX</td>
+									<td>AIR MEXICO</td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="AMX"><input
+												type="checkbox" name="AMX"
+												id="AMX" checked='checked' /><span>AMX</span></label>
+										</div>
+									</td>
+									<td>
+									<a href="/view_audit?airlineCode=AMX">View Audit</a>
+									</td>
+									<td>
+										
+										<a onclick='javascript:confirm("Do you confirm to Delete this airline")'
+										href="/delete_airline?airlineCode=AMX" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>TST</td>
+									<td>Test Airline</td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="TST"><input
+												type="checkbox" name="TST"
+												id="TST" checked='checked' /><span>TST</span></label>
+										</div>
+									</td>
+									<td>
+									<a href="/view_audit?airlineCode=TST">View Audit</a>
+									</td>
+									<td>
+										
+										<a onclick='javascript:confirm("Do you confirm to Delete this airline")'
+										href="/delete_airline?airlineCode=TST" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>UA</td>
+									<td>United Airlines</td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="UA"><input
+												type="checkbox" name="UA"
+												id="UA"  /><span>UA</span></label>
+										</div>
+									</td>
+									<td>
+									<a href="/view_audit?airlineCode=UA">View Audit</a>
+									</td>
+									<td>
+										
+										<a onclick='javascript:confirm("Do you confirm to Delete this airline")'
+										href="/delete_airline?airlineCode=UA" />Delete</a>
+									</td>
+								</tr>
+							
+						</tbody>
+					</table>
+					
+					<br /> <br />
+					<table cellpadding="5" cellspacing="5" border="0" width="100%">
+						<tr>
+							<td><a
+								href="/tail_info"><h4>See
+										Tails</h4></a></td>
+										
+							<td><a
+								href="/add_airline"><h4>Add
+										Airline</h4></a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!--  -->
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /wrap -->
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+/**
+ * SCOOT PURCHASE PATH STYLES
+ */
+
+/** HEADER */
+#pageTop {height:145px; position:relative;}
+#pageLogo {padding-top:23px;}
+#pageTopNav {position:absolute; top:10px; right:0; z-index:100;}
+#pageTopNav li {display:block; float:left; font-size:11px; font-weight:bold;}
+#pageTopNav li a {display:block; float:left; color:#606060; height:16px; padding:2px 10px 0 20px;}
+
+
+/** CONTENT WRAPPER */
+
+/** CONTENT HEADERS (main page titles in the content) */
+#contentHdr {height:73px; background:#3a3939; -moz-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;}
+
+
+/** MAIN CONTENT */
+#main {width:724px; float:left; min-height:600px; height:auto;}
+#content {padding-bottom:40px;}
+
+/** BREADCRUMBS */
+#breadCrumbs {padding:18px;}
+
+/** RIGHT SIDEBAR */
+#sideBar { width:228px; float:right; -webkit-box-shadow:  0px 5px 3px -2px #bbbbbb; -moz-box-shadow:  0px 5px 3px -2px #bbbbbb; box-shadow:  0px 5px 3px -2px #bbbbbb;}
+
+/** FOOTER */
+#pageBttmContent { width:960px; margin:0 auto; color:#ffffff; font-size:11px;}
+#pageBttmContent p { padding:10px;}
+#pageBttmContent ul li { display:block; float:left;}
+#pageBttmContent ul li#termsUse { border-right:solid 1px #fff; padding-right:10px;}
+#pageBttmContent ul li a { margin-left:10px; color:#fff; font-weight:bold;}
+
+/****************************************************************
+ * FORM STYLES
+ ****************************************************************/
+
+/** fieldsets */
+fieldset {clear:both; display:block; border:none;}
+
+
+/** legends */
+legend {height:48px; width:700px; display:block; text-indent:-99999px;}
+legend#lgndPayInfo {height:41px;}
+
+/** labels */
+label {display:inline-block; /*width:116px; */text-align:left; /*margin-left:20px;*/ font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+label.cardLabel {display:inline-block; width:auto; margin-left:0; margin-right:20px;}
+
+/** inputs */
+input {font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+input#accessCodeText, input#emailAddr, input#cardNumber {width:325px;}
+
+/** select/option menus */
+select, option {font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+select#expirationYear, select#expirationMonth, select#country {width:160px;}
+
+/** textareas */
+textarea {font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+
+/** DIVs */
+.formWrap div.gutter {padding:10px 0; background:#ececec;}
+.formWrap div.inputWrap {position:relative; clear:both; padding:8px 0;}
+div#accessCode {position:relative; padding:16px 0; background:#f8da30; border:solid 1px #969696; -moz-border-radius:10px 10px 10px 10px; border-radius:10px 10px 10px 10px;}
+
+/** other form elements */
+.formWrap {margin-left:16px; margin-bottom:24px;}
+#purchaseForm {padding-bottom:110px;}
+.formWrap p {font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+.inputWrap input, .inputWrap select, .inputWrap option, .inputWrap label {color:#737373;}
+fieldset#purchaseCTA h2 {font-size:22px; color:#121419; margin:6px 0 22px 0;}
+fieldset#purchaseCTA a {color:#767574; text-decoration:underline;}
+fieldset#purchaseCTA p {font-size:10px;}
+fieldset#purchaseCTA h1 {font-size:14px;}
+div#accessCode p {margin-left:140px; margin-top:5px;}
+div#accessCode input#applyCodeBtn {position:absolute; z-index:100; top:40px; right:25px;}
+
+/** BACK-END ERRORS */
+.formErrors {color: #ff0000;position:relative; background:#fff  no-repeat 20px 6px; border:solid 1px #de3433; -moz-border-radius:10px 10px 10px 10px; border-radius:10px 10px 10px 10px;   height: 54px; overflow: hidden; padding-top: 5px; padding-left: 75px;  font-weight: bold; color: #DE3433; display: none; z-index: 500; font-size: 12px;}
+
+.formErrors p, #formErrors li {font-size:14px; color:#de3433; margin-left:140px;}
+.formErrors li {list-style:disc; margin:10px 25px 10px 170px; font-style:italic; font-weight:bold;}
+
+.error {
+	color: #ff0000;
+}
+ 
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+
+/** FRONT-END ERRORS */
+div.error, div#errorMsg {font-size:12px; color:#de3433; padding:4px 0; width:205px; font-weight:bold;}
+div.CVVerror {width:470px !important;}
+div#errorMsg {top:15px !important;}
+
+/* FUTURE ENHANCEMENTS: not for phase I */
+.titleHover div.hoverGenres, #searchBox {visibility:hidden; display:none;}
