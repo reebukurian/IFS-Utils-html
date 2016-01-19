@@ -1,0 +1,45 @@
+/*
+body {
+	padding:0 !important;
+}
+*/
+.container {
+	width:100% !important;
+}
+
+.span5 {
+	width:100% !important;
+	margin:0 !important;
+}
+
+.form-actions {
+	margin:0 -20px;
+	padding:10px 20px !important;
+}
+
+.btn {
+	margin:2px 5px;
+}
+
+.btn:first-of-type {
+	margin-left:0;
+}
+
+#portalUtilityWrap,
+#headerContent {
+	padding:0 !important;
+	width:auto !important;
+	max-width: 1000px;
+}
+
+#tails,
+#tailInfo,
+#airline {
+	padding: 0 10px;
+}
+
+@media screen and (min-width: 481px) {
+	.form-actions {
+		padding-left:180px !important;
+	}
+}
