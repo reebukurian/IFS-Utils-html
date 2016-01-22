@@ -40,53 +40,45 @@
                         <!-- <a id="btn-signin" href="#">Sign In</a>  -->
                     </div>
                 </div>
-        </div>                
+            </div>                
 
-        <div id="portalUtilityWrap">
-            <div class="span5">
+            <div id="portalUtilityWrap">
+                <div class="span5">
+                    <h1>VIDEO SERVICE</h1>
 
-                <h1>VIDEO SERVICE</h1>
-		  <br>
-		  <br>
-		  <br /> <br />
-				<div><font color="red"><h3></h3></font> </div>
-                <fieldset>
                     <form id="airline" action="/saveAirline" method="post">
+                    <fieldset>
 
                         
-                               <div class="control-group">
-                                    <label for="airlineCode">Airline Code</label>
-                                    <input id="airlineCode" name="airlineCode" placeholder="Airline Code" type="text" value=""/>
-                                </div>
-                        
-                        
-                        
-                               <div class="control-group">
-                                    <label for="airlineName">Airline Name</label>
-                                    <input id="airlineName" name="airlineName" class="input-large" placeholder="Airline Name" type="text" value=""/>
-                                </div>
-                        
+                       <div class="control-group">
+                            <label for="airlineCode">Airline Code</label>
+                            <input id="airlineCode" name="airlineCode" placeholder="Airline Code" type="text" value=""/>
+                        </div>
+                
+                
+                
+                       <div class="control-group">
+                            <label for="airlineName">Airline Name</label>
+                            <input id="airlineName" name="airlineName" class="input-large" placeholder="Airline Name" type="text" value=""/>
+                        </div>
+                
 
-                        
-                                <div class="control-group">
-                                    <label for="activeStatus">Active Status</label>
+                
+                        <div class="control-group">
+                            <label for="activeStatus">Active Status</label>
 
-                                        <div class="controls">
-                                        <select id="activeStatus" name="activeStatus">
-                                            <option value="true">ON</option>
-                                            <option value="false">OFF</option>
-                                        </select><br />
-                                    </div>
-                                </div>
-                        
-
-                       
-			   <br />		
+                            <div class="controls">
+                                <select id="activeStatus" name="activeStatus">
+                                    <option value="true">ON</option>
+                                    <option value="false">OFF</option>
+                                </select>
+                            </div>
+                        </div>
                         <input type="submit" onclick="return validateForm();" value="Submit" />
+                    </fieldset>
                     </form>
-                </fieldset>
+                </div>
             </div>
-        </div>
         </div>
     </body>
 </html>

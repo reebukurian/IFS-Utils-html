@@ -46,13 +46,8 @@
             <div class="span5">
 
                 <h1>VIDEO SERVICE</h1>
-		  <br>
-		  <br>
-                <br /> <br />
-				
-				<div><font color="red"><h3></h3></font> </div>
+                <form id="tails" action="/saveBulkTails" method="post">
                 <fieldset>
-                    <form id="tails" action="/saveBulkTails" method="post">
 
                         
                                <div class="control-group">
@@ -66,19 +61,18 @@
 									<input id="add2" name="add" type="radio" value="false"/> Update</td>
 							</tr>
 						</table>
+                        <input type="submit" onclick="return validateForm();" value="Submit" />
+                        <a href="/tail_info">Cancel</a>
 
-						<br />
 						<table cellpadding="5" cellspacing="5" border="0" width="100%">
 							<tr>
-								<td><input type="submit" onclick="return validateForm();"
-									value="Submit" /></td>
+								<td></td>
 
-								<td><a href="/tail_info"><h4>Cancel
-										</h4></a></td>
+								<td></td>
 							</tr>
 						</table>
-					</form>
                 </fieldset>
+                </form>
             </div>
         </div>
         </div>

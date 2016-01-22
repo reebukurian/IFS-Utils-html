@@ -13,7 +13,6 @@
 <link href="static/css/portalService.css" rel="stylesheet">
 <link href="static/css/demo_page.css" rel="stylesheet">
 <link href="static/css/demo_table.css" rel="stylesheet">
-<link href="static/css/IFSStyles.css" rel="stylesheet">
 <!--    <style>
               body {
                 padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -62,6 +61,7 @@
 <link rel="apple-touch-icon-precomposed"
 	href="static/ico/apple-touch-icon-57-precomposed.png">
 
+<link href="static/css/IFSStyles.css" rel="stylesheet">
 <script type="text/javascript" language="javascript"
 	src="static/js/jquery.js"></script>
 
@@ -120,7 +120,6 @@
 				<div class="span5">
 
 					<h1>PORTAL SERVICES - VIDEO AVAILABILITY</h1>
-					<br /> <br />
 					
 					<table cellpadding="0" cellspacing="0" border="0" class="display"
 						id="example" width="100%">
@@ -500,20 +499,11 @@
 						</tbody>
 					</table>
 					
-					<br /> <br />
-					<table cellpadding="5" cellspacing="5" border="0" width="100%">
-						<tr>
-							<td><a
-								href="/getAllAirlines"><h4>See
-										Airlines</h4></a></td>
-							<td><a
-								href="/add_tail_info"><h4>Add
-										New Tail</h4></a></td>
-							<td><a
-								href="/add_bulk_tail"><h4>Add/Update
-										Bulk Tails</h4></a></td>
-						</tr>
-					</table>
+					<div class="tableMenu">
+						<a href="/getAllAirlines">See Airlines</a>
+						<a href="/add_tail_info">Add New Tail</a>
+						<a href="/add_bulk_tail">Add/Update Bulk Tails</a>
+					</div>
 				</div>
 			</div>
 			<!--  -->
