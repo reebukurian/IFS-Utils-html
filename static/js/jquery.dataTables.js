@@ -9182,7 +9182,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": " ",
 			
 			
 				/**
@@ -9203,7 +9203,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": " ",
 			
 			
 				/**
@@ -9224,7 +9224,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": " ",
 			
 			
 				/**
@@ -9245,7 +9245,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": " "
 			},
 		
 			/**
@@ -11441,10 +11441,15 @@
 		"sPageButton": "paginate_button",
 		"sPageButtonActive": "paginate_active",
 		"sPageButtonStaticDisabled": "paginate_button paginate_button_disabled",
-		"sPageFirst": "first",
-		"sPagePrevious": "previous",
-		"sPageNext": "next",
-		"sPageLast": "last",
+		// "sPageFirst": "first",
+		// "sPagePrevious": "previous",
+		// "sPageNext": "next",
+		// "sPageLast": "last",
+
+		"sPageFirst": " ",
+		"sPagePrevious": " ",
+		"sPageNext": " ",
+		"sPageLast": " ",
 		
 		/* Striping classes */
 		"sStripeOdd": "odd",

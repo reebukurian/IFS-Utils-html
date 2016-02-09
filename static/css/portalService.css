@@ -1,5 +1,4 @@
 html, body { 
-    font-family: helvetica,arial;
     height: auto;
     min-height: 100%;
 }
@@ -16,10 +15,8 @@ body {
 }
 div, p, span {
     color: #414042;
-    font-family: helvetica,arial;
 }
 a {
-    font-family: helvetica,arial,sans-serif;
     outline: medium none;
     text-decoration: underline;
 }
@@ -47,40 +44,47 @@ a {
 }
 #header {
     box-shadow: -2px 8px 6px -6px #888888;
+    box-shadow: none;
 }
 #header, #headerContent, #logo, #header-account {
     position: relative;
 }
 #header {
+    padding-top: 10px;
     background: none repeat scroll 0 0 #FFFFFF;
-    height: 85px;
+    height: 75px;
 }
 #headerContent {
     margin: 0 auto;
     width: 955px;
 }
 #logo {
-    float: left;
-    margin: 8px;
-    width: 320px;
+    margin: 0 auto;
+    width: 105px;
+    height: 65px;   
 }
 #logo a {
-    background: url("../img/logo_RETINA.png") no-repeat scroll 0 0 / 320px auto transparent;
+    background: url("../img/logo_gogo.png") no-repeat 0 0 transparent;
+    background-size: auto 100%;
+    background-position: top center;
 	text-indent: -9999px;
-    display: block;
-    height: 65px;	
+    display: inline-block;
+    width: 100%;
+    height: 100%;	
 }
 
 #header-account {
     clear: none;
     float: right;
     background: none repeat scroll 0 0 #FFFFFF;
-    border-bottom: medium none;
-    border-top: medium none;
+    border-bottom: none;
+    border-top: none;
     padding: 18px 0;
+    text-align: right;
 
 }
 
+/*
 #header-account a#btn-signin, input[type="submit"] {
     background: url("../img/submit_BG.png") repeat-x scroll 0 -32px #CE171B;
 	border: 1px solid #BF1F2D;
@@ -89,12 +93,10 @@ a {
     color: #FFFFFF;
     text-decoration: none;
 }
+*/
 
 #header-account a {
-    margin-left: 20px;
-    padding: 4px 10px;
-	display: block;
-    float: right;
+    display: block;
 }
 
 #portalUtilityWrap{height:auto;margin:0 auto;padding:0 8px;background:#fff;}
@@ -156,3 +158,8 @@ td {
 .dataTables_filter {
 margin-bottom: 10px;
 }
+
+
+/*
+normal normal normal 14px/1 FontAwesome;
+*/
