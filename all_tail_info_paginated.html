@@ -1,0 +1,1634 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portal Utility Service - Video Flag</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Le styles -->
+<link href="static/css/bootstrap.css" rel="stylesheet">
+<link href="static/css/videoService.css" rel="stylesheet">
+<link href="static/css/checkbox.css" rel="stylesheet">
+<link href="static/css/portalService.css" rel="stylesheet">
+<link href="static/css/IFSStyles.css"  rel="stylesheet">
+<link href="static/css/demo_page.css"  rel="stylesheet">
+<link href="static/css/demo_table.css"  rel="stylesheet">
+
+<link href="static/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="static/css/portalService.css" rel="stylesheet">
+
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="static/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="static/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="static/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="static/ico/apple-touch-icon-57-precomposed.png">
+
+<script type="text/javascript" language="javascript"
+	src="static/js/jquery.js"></script>
+
+<script type="text/javascript" language="javascript" src="static/js/jquery.dataTables.js"></script>
+	
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		var ctx = "";
+		 $('#example').dataTable(
+				 {
+				        "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
+				        "iDisplayLength": 50,
+				        "sPaginationType": "full_numbers",
+				        "bFilter": false,
+				        //"bSearchable":false,
+				        //"bInfo":false,
+				        "fnDrawCallback":function(){
+				            $('#example_length')[0].style.display = "none";
+				            $('#example_paginate')[0].style.display = "none";
+				            $('#example_info')[0].style.display = "none";
+				        }
+				  }
+		 );
+		
+		$(':checkbox').live("click", function() {
+			var $this = $(this);
+			var arrId = $this.attr("id");
+			var source = "";
+			if (arrId.indexOf("***") != -1) {
+				var array = arrId.split("***");
+				arrId = array[0];
+				source = array[1];
+			}
+			var $this = $(this);
+			//$this.attr('disabled','true');
+			// $this will contain a reference to the checkbox
+			var request = {
+					tailNumber: arrId,
+					locale: source,
+					activeStatus:$this.is(':checked')?'true':'false'
+		        }
+			var id = $this.attr("id");
+				$.ajax({
+					type : "POST",
+					url : ctx+"/updateTail",
+					data : request,
+					dataType: 'json'
+				});
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div id="headerContent">
+				<div id="header-account">
+					Welcome
+					<br/><a href="/j_spring_security_logout"> Logout</a>
+				</div>
+				<div id="logo">
+					<a href="/tail_info">Gogo</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="content">
+			<h1>PORTAL SERVICES - VIDEO AVAILABILITY</h1>
+			<div id="portalUtilityWrap">
+				<div class="span5">
+
+					<br /> <br />
+					
+					
+					<form id="tailInfo" action="/searchTails" method="post">
+					<div>
+						<input id="tailNumber" name="tailNumber" placeholder="Search By Tail" type="text" required="true" value=""/>
+						<span>
+							<input type="submit" value="Search" />
+							<a style="vertical-align:bottom; font-size:1.2em; margin:15px;" href="/tail_info?page=current">Reset</a>
+						</span>
+					</div>
+					<div>
+</div></form>
+					
+					
+					<table cellpadding="5" cellspacing="5" border="0" width="100%" style="margin-bottom:20px;">
+						<tr>
+							<td><a href="/getAllAirlines"><h4>View Airlines</h4></a></td>
+							<td><a href="/add_tail_info"><h4>Add New Tail</h4></a></td>
+							<td><a href="/add_bulk_tail"><h4>Add/Update Bulk Tails</h4></a></td>
+						</tr>
+					</table>
+					
+					
+						Showing 151 to 200 of 2629 entries
+						<a href="?page=previous"><B>&lt;&lt; Prev</B></a>
+						<a href="?page=next"><B>Next &gt;&gt;</B></a>
+					
+					<table cellpadding="0" cellspacing="0" border="0" class="display"
+						id="example" width="100%">
+						<thead>
+							<tr>
+								<th>Tail Number</th>
+								<th>Airline Code</th>
+								<th>Availability</th>
+								<th>Source</th>
+								<th>Locale</th>
+								<th>Audit</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+							
+							
+								
+								
+								<tr>
+									<td>KU1</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="KU1***ja_JP"><input
+												type="checkbox" name="KU1***ja_JP"
+												id="KU1***ja_JP"  /><span>KU1</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>ja_JP<input type="hidden"
+										id="KU1_locale" value="ja_JP" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=KU1&locale=ja_JP">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=KU1&locale=ja_JP" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>KU2</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="KU2***en_US"><input
+												type="checkbox" name="KU2***en_US"
+												id="KU2***en_US"  /><span>KU2</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="KU2_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=KU2&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=KU2&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>KU2</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="KU2***ja_JP"><input
+												type="checkbox" name="KU2***ja_JP"
+												id="KU2***ja_JP"  /><span>KU2</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>ja_JP<input type="hidden"
+										id="KU2_locale" value="ja_JP" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=KU2&locale=ja_JP">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=KU2&locale=ja_JP" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>KU3</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="KU3***en_US"><input
+												type="checkbox" name="KU3***en_US"
+												id="KU3***en_US"  /><span>KU3</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="KU3_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=KU3&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=KU3&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>KU3</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="KU3***ja_JP"><input
+												type="checkbox" name="KU3***ja_JP"
+												id="KU3***ja_JP"  /><span>KU3</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>ja_JP<input type="hidden"
+										id="KU3_locale" value="ja_JP" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=KU3&locale=ja_JP">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=KU3&locale=ja_JP" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>LT</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="LT***en_US"><input
+												type="checkbox" name="LT***en_US"
+												id="LT***en_US"  /><span>LT</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="LT_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=LT&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=LT&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>LT11</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="LT11***en_US"><input
+												type="checkbox" name="LT11***en_US"
+												id="LT11***en_US" checked='checked' /><span>LT11</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="LT11_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=LT11&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=LT11&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>LT13</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="LT13***en_US"><input
+												type="checkbox" name="LT13***en_US"
+												id="LT13***en_US"  /><span>LT13</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="LT13_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=LT13&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=LT13&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>LT2</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="LT2***en_US"><input
+												type="checkbox" name="LT2***en_US"
+												id="LT2***en_US" checked='checked' /><span>LT2</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="LT2_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=LT2&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=LT2&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>LT34</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="LT34***en_US"><input
+												type="checkbox" name="LT34***en_US"
+												id="LT34***en_US"  /><span>LT34</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="LT34_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=LT34&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=LT34&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>LT6</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="LT6***en_US"><input
+												type="checkbox" name="LT6***en_US"
+												id="LT6***en_US" checked='checked' /><span>LT6</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="LT6_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=LT6&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=LT6&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>LT8</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="LT8***en_US"><input
+												type="checkbox" name="LT8***en_US"
+												id="LT8***en_US"  /><span>LT8</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="LT8_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=LT8&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=LT8&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>LT9</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="LT9***en_US"><input
+												type="checkbox" name="LT9***en_US"
+												id="LT9***en_US"  /><span>LT9</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="LT9_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=LT9&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=LT9&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N00007</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N00007***en_US"><input
+												type="checkbox" name="N00007***en_US"
+												id="N00007***en_US" checked='checked' /><span>N00007</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N00007_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N00007&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N00007&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N101HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N101HQ***en_US"><input
+												type="checkbox" name="N101HQ***en_US"
+												id="N101HQ***en_US"  /><span>N101HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N101HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N101HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N101HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N101NN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N101NN***en_US"><input
+												type="checkbox" name="N101NN***en_US"
+												id="N101NN***en_US"  /><span>N101NN</span></label>
+										</div></td>
+									<td>MANUAL</td>
+									<td>en_US<input type="hidden"
+										id="N101NN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N101NN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N101NN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N102HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N102HQ***en_US"><input
+												type="checkbox" name="N102HQ***en_US"
+												id="N102HQ***en_US"  /><span>N102HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N102HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N102HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N102HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N102NN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N102NN***en_US"><input
+												type="checkbox" name="N102NN***en_US"
+												id="N102NN***en_US"  /><span>N102NN</span></label>
+										</div></td>
+									<td>MANUAL</td>
+									<td>en_US<input type="hidden"
+										id="N102NN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N102NN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N102NN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N102UW</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N102UW***en_US"><input
+												type="checkbox" name="N102UW***en_US"
+												id="N102UW***en_US" checked='checked' /><span>N102UW</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N102UW_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N102UW&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N102UW&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N103HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N103HQ***en_US"><input
+												type="checkbox" name="N103HQ***en_US"
+												id="N103HQ***en_US"  /><span>N103HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N103HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N103HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N103HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N103NN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N103NN***en_US"><input
+												type="checkbox" name="N103NN***en_US"
+												id="N103NN***en_US"  /><span>N103NN</span></label>
+										</div></td>
+									<td>MANUAL</td>
+									<td>en_US<input type="hidden"
+										id="N103NN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N103NN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N103NN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N103SY</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N103SY***en_US"><input
+												type="checkbox" name="N103SY***en_US"
+												id="N103SY***en_US" checked='checked' /><span>N103SY</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N103SY_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N103SY&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N103SY&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N103US</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N103US***en_US"><input
+												type="checkbox" name="N103US***en_US"
+												id="N103US***en_US" checked='checked' /><span>N103US</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N103US_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N103US&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N103US&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N104HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N104HQ***en_US"><input
+												type="checkbox" name="N104HQ***en_US"
+												id="N104HQ***en_US"  /><span>N104HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N104HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N104HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N104HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N104NN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N104NN***en_US"><input
+												type="checkbox" name="N104NN***en_US"
+												id="N104NN***en_US"  /><span>N104NN</span></label>
+										</div></td>
+									<td>MANUAL</td>
+									<td>en_US<input type="hidden"
+										id="N104NN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N104NN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N104NN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N104UW</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N104UW***en_US"><input
+												type="checkbox" name="N104UW***en_US"
+												id="N104UW***en_US" checked='checked' /><span>N104UW</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N104UW_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N104UW&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N104UW&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N105HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N105HQ***en_US"><input
+												type="checkbox" name="N105HQ***en_US"
+												id="N105HQ***en_US"  /><span>N105HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N105HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N105HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N105HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N105NN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N105NN***en_US"><input
+												type="checkbox" name="N105NN***en_US"
+												id="N105NN***en_US"  /><span>N105NN</span></label>
+										</div></td>
+									<td>MANUAL</td>
+									<td>en_US<input type="hidden"
+										id="N105NN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N105NN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N105NN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N105SY</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N105SY***en_US"><input
+												type="checkbox" name="N105SY***en_US"
+												id="N105SY***en_US" checked='checked' /><span>N105SY</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N105SY_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N105SY&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N105SY&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N105UW</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N105UW***en_US"><input
+												type="checkbox" name="N105UW***en_US"
+												id="N105UW***en_US" checked='checked' /><span>N105UW</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N105UW_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N105UW&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N105UW&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N106HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N106HQ***en_US"><input
+												type="checkbox" name="N106HQ***en_US"
+												id="N106HQ***en_US"  /><span>N106HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N106HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N106HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N106HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N106NN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N106NN***en_US"><input
+												type="checkbox" name="N106NN***en_US"
+												id="N106NN***en_US"  /><span>N106NN</span></label>
+										</div></td>
+									<td>MANUAL</td>
+									<td>en_US<input type="hidden"
+										id="N106NN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N106NN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N106NN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N106SY</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N106SY***en_US"><input
+												type="checkbox" name="N106SY***en_US"
+												id="N106SY***en_US" checked='checked' /><span>N106SY</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N106SY_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N106SY&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N106SY&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N107HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N107HQ***en_US"><input
+												type="checkbox" name="N107HQ***en_US"
+												id="N107HQ***en_US"  /><span>N107HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N107HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N107HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N107HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N107NN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N107NN***en_US"><input
+												type="checkbox" name="N107NN***en_US"
+												id="N107NN***en_US"  /><span>N107NN</span></label>
+										</div></td>
+									<td>MANUAL</td>
+									<td>en_US<input type="hidden"
+										id="N107NN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N107NN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N107NN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N107SY</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N107SY***en_US"><input
+												type="checkbox" name="N107SY***en_US"
+												id="N107SY***en_US" checked='checked' /><span>N107SY</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N107SY_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N107SY&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N107SY&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N107US</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N107US***en_US"><input
+												type="checkbox" name="N107US***en_US"
+												id="N107US***en_US"  /><span>N107US</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N107US_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N107US&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N107US&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N108HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N108HQ***en_US"><input
+												type="checkbox" name="N108HQ***en_US"
+												id="N108HQ***en_US"  /><span>N108HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N108HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N108HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N108HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N108NN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N108NN***en_US"><input
+												type="checkbox" name="N108NN***en_US"
+												id="N108NN***en_US"  /><span>N108NN</span></label>
+										</div></td>
+									<td>MANUAL</td>
+									<td>en_US<input type="hidden"
+										id="N108NN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N108NN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N108NN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N108SY</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N108SY***en_US"><input
+												type="checkbox" name="N108SY***en_US"
+												id="N108SY***en_US" checked='checked' /><span>N108SY</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N108SY_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N108SY&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N108SY&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N108UW</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N108UW***en_US"><input
+												type="checkbox" name="N108UW***en_US"
+												id="N108UW***en_US" checked='checked' /><span>N108UW</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N108UW_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N108UW&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N108UW&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N109HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N109HQ***en_US"><input
+												type="checkbox" name="N109HQ***en_US"
+												id="N109HQ***en_US"  /><span>N109HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N109HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N109HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N109HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N109NN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N109NN***en_US"><input
+												type="checkbox" name="N109NN***en_US"
+												id="N109NN***en_US"  /><span>N109NN</span></label>
+										</div></td>
+									<td>MANUAL</td>
+									<td>en_US<input type="hidden"
+										id="N109NN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N109NN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N109NN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N109SY</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N109SY***en_US"><input
+												type="checkbox" name="N109SY***en_US"
+												id="N109SY***en_US" checked='checked' /><span>N109SY</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N109SY_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N109SY&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N109SY&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N109UW</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N109UW***en_US"><input
+												type="checkbox" name="N109UW***en_US"
+												id="N109UW***en_US" checked='checked' /><span>N109UW</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N109UW_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N109UW&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N109UW&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N110AN</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N110AN***en_US"><input
+												type="checkbox" name="N110AN***en_US"
+												id="N110AN***en_US"  /><span>N110AN</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N110AN_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N110AN&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N110AN&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N110HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N110HQ***en_US"><input
+												type="checkbox" name="N110HQ***en_US"
+												id="N110HQ***en_US"  /><span>N110HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N110HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N110HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N110HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N110SY</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N110SY***en_US"><input
+												type="checkbox" name="N110SY***en_US"
+												id="N110SY***en_US" checked='checked' /><span>N110SY</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N110SY_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N110SY&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N110SY&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N110UW</td>
+									<td></td>
+									<td>
+											
+												
+											
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N110UW***en_US"><input
+												type="checkbox" name="N110UW***en_US"
+												id="N110UW***en_US" checked='checked' /><span>N110UW</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N110UW_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N110UW&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N110UW&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+								
+								
+								<tr>
+									<td>N111HQ</td>
+									<td></td>
+									<td>
+											
+											
+												
+											
+										
+										<div class="iphone-toggle-buttons">
+											<label for="N111HQ***en_US"><input
+												type="checkbox" name="N111HQ***en_US"
+												id="N111HQ***en_US"  /><span>N111HQ</span></label>
+										</div></td>
+									<td>ASP</td>
+									<td>en_US<input type="hidden"
+										id="N111HQ_locale" value="en_US" /></td>
+									<td>
+									<a href="/view_audit_tail?tailNumber=N111HQ&locale=en_US">View Audit</a>
+									</td>
+									<td>
+
+										<a onclick='javascript:alert("Deleting the tail")'
+									    href="/delete_tail_info?tailNumber=N111HQ&locale=en_US" />Delete</a>
+									</td>
+								</tr>
+							
+						</tbody>
+					</table>
+					
+					
+						Showing 151 to 200 of 2629 entries
+						<a href="?page=previous"><B>&lt;&lt; Prev</B></a>
+						<a href="?page=next"><B>Next &gt;&gt;</B></a>
+					
+					
+					<br /> <br />
+					<table cellpadding="5" cellspacing="5" border="0" width="100%">
+						<tr>
+							<td><a href="/getAllAirlines"><h4>View Airlines</h4></a></td>
+							<td><a href="/add_tail_info"><h4>Add New Tail</h4></a></td>
+							<td><a href="/add_bulk_tail"><h4>Add/Update Bulk Tails</h4></a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!--  -->
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /wrap -->
+
+</body>
+</html>
