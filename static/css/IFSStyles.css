@@ -23,10 +23,8 @@
 
 body {
 	padding:0 !important;
-}
-*/
-body {
 	background: #f5f5f5;
+	background-image: none !important;
 	font-family: "DinWebPro", Helvetica, Arial, sans-serif;
 	font-weight: 100;
 }
@@ -123,6 +121,8 @@ tr.even td.sorting_1 {
 .tableMenu a,
 #header-account a#btn-signin,
 .cancel,
+.btn,
+button,
 input[type="submit"]  {
 	display: inline-block;
 	margin: 5px 10px 5px 0;
@@ -157,19 +157,18 @@ input[type="submit"]  {
 	margin-left: 0;
 }
 
-.btn {
-	border-bottom: 3px solid #940a14;
-}
-
 .paginate_disabled_previous,
 .paginate_enabled_previous,
 .paginate_disabled_next,
 .paginate_enabled_next,
-
+.btnPrevious,
+.btnNext,
 .paginate_disabled_previous:hover,
 .paginate_enabled_previous:hover,
 .paginate_disabled_next:hover,
-.paginate_enabled_next:hover {
+.paginate_enabled_next:hover,
+.btnPrevious:hover,
+.btnNext:hover {
 	display: block;
 	width: 45px !important;
 	height: 45px !important;
@@ -185,23 +184,33 @@ input[type="submit"]  {
 }
 
 .paginate_disabled_previous,
-.paginate_disabled_next {
+.paginate_disabled_next,
+.btnPrevious.disabled,
+.btnNext.disabled {
 	opacity: 0.3;
 	cursor: inherit;
 }
 
 .paginate_disabled_previous:before,
-.paginate_enabled_previous:before {
+.paginate_enabled_previous:before,
+.btnPrevious:before,
+.btnPrevious.diabled:before {
 	display: block;
 	content: "\f053";
 }
 
 .paginate_disabled_next:before,
-.paginate_enabled_next:before {
+.paginate_enabled_next:before,
+.btnNext:before,
+.btnNext.disabled:before {
 	display: block;
 	content: "\f054";
 }
 
+.btnPrevious,
+.btnNext {
+	display: inline-block;
+}
 @media screen and (min-width: 481px) {
 	.form-actions {
 		padding-left:180px !important;

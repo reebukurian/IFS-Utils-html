@@ -37,6 +37,7 @@
 	href="static/ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed"
 	href="static/ico/apple-touch-icon-57-precomposed.png">
+<link href="static/css/IFSStyles.css" rel="stylesheet">
 
 <script type="text/javascript" language="javascript"
 	src="static/js/jquery.js"></script>
@@ -97,7 +98,7 @@
 			<div id="headerContent">
 				<div id="header-account">
 					Welcome
-					<br/><a href="/j_spring_security_logout"> Logout</a>
+					<a href="/j_spring_security_logout"> Logout</a>
 				</div>
 				<div id="logo">
 					<a href="/tail_info">Gogo</a>
@@ -109,16 +110,12 @@
 			<h1>PORTAL SERVICES - VIDEO AVAILABILITY</h1>
 			<div id="portalUtilityWrap">
 				<div class="span5">
-
-					<br /> <br />
-					
-					
 					<form id="tailInfo" action="/searchTails" method="post">
 					<div>
 						<input id="tailNumber" name="tailNumber" placeholder="Search By Tail" type="text" required="true" value=""/>
 						<span>
 							<input type="submit" value="Search" />
-							<a style="vertical-align:bottom; font-size:1.2em; margin:15px;" href="/tail_info?page=current">Reset</a>
+							<a class="btn" href="/tail_info?page=current">Reset</a>
 						</span>
 					</div>
 					<div>
@@ -127,16 +124,16 @@
 					
 					<table cellpadding="5" cellspacing="5" border="0" width="100%" style="margin-bottom:20px;">
 						<tr>
-							<td><a href="/getAllAirlines"><h4>View Airlines</h4></a></td>
-							<td><a href="/add_tail_info"><h4>Add New Tail</h4></a></td>
-							<td><a href="/add_bulk_tail"><h4>Add/Update Bulk Tails</h4></a></td>
+							<td><a class="btn" href="/getAllAirlines">View Airlines</a></td>
+							<td><a class="btn" href="/add_tail_info">Add New Tail</a></td>
+							<td><a class="btn" href="/add_bulk_tail">Add/Update Bulk Tails</a></td>
 						</tr>
 					</table>
 					
 					
+						<a class="btnPrevious" href="?page=previous"></a>
 						Showing 151 to 200 of 2629 entries
-						<a href="?page=previous"><B>&lt;&lt; Prev</B></a>
-						<a href="?page=next"><B>Next &gt;&gt;</B></a>
+						<a class="btnNext" href="?page=next"></a>
 					
 					<table cellpadding="0" cellspacing="0" border="0" class="display"
 						id="example" width="100%">
@@ -1609,17 +1606,17 @@
 					</table>
 					
 					
+						<a class="btnPrevious" href="?page=previous"></a>
 						Showing 151 to 200 of 2629 entries
-						<a href="?page=previous"><B>&lt;&lt; Prev</B></a>
-						<a href="?page=next"><B>Next &gt;&gt;</B></a>
+						<a class="btnNext" href="?page=next"></a>
 					
 					
 					<br /> <br />
 					<table cellpadding="5" cellspacing="5" border="0" width="100%">
 						<tr>
-							<td><a href="/getAllAirlines"><h4>View Airlines</h4></a></td>
-							<td><a href="/add_tail_info"><h4>Add New Tail</h4></a></td>
-							<td><a href="/add_bulk_tail"><h4>Add/Update Bulk Tails</h4></a></td>
+							<td><a class="btn" href="/getAllAirlines">View Airlines</a></td>
+							<td><a class="btn" href="/add_tail_info">Add New Tail</a></td>
+							<td><a class="btn" href="/add_bulk_tail">Add/Update Bulk Tails</a></td>
 						</tr>
 					</table>
 				</div>
