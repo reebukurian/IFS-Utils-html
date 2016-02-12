@@ -64,6 +64,7 @@ body {
 	border-width: 0 1px 1px;
 	border-style: solid;
 	border-color: #a6c1c5;
+	background: #40b4e5;
 }
 
 #portalUtilityWrap .span5 > h1 {
@@ -169,7 +170,7 @@ input[type="submit"]  {
 .paginate_enabled_next:hover,
 .btnPrevious:hover,
 .btnNext:hover {
-	display: block;
+	display: inline-block;
 	width: 45px !important;
 	height: 45px !important;
 	padding: 0 !important;
