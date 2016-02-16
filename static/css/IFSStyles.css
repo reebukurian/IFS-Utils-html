@@ -76,12 +76,16 @@ form {
 	background-color: #40b4e5;
 }
 
+#example,
 #example_wrapper {
+	display: block;
 	overflow: hidden;
 	height:auto;
 }
 
+.loading #example,
 .loading #example_wrapper {
+	display: none;
 	height:0;
 }
 
