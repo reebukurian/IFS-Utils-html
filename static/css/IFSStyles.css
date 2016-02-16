@@ -76,6 +76,28 @@ form {
 	background-color: #40b4e5;
 }
 
+#example_wrapper {
+	overflow: hidden;
+	height:auto;
+}
+
+.loading #example_wrapper {
+	height:0;
+}
+
+#loadingDisplay {
+	display: block;
+	overflow: hidden;
+	height: 0;
+	min-height: 0;
+	background:red;
+}
+
+.loading #loadingDisplay {
+	min-height: 400px;
+	height: 100%;
+}
+
 #tails,
 #tailInfo,
 #airline {
@@ -111,7 +133,12 @@ tr.even td.sorting_1 {
 
 .dataTables_length,
 .dataTables_info {
-	margin-left: 10px;
+	display: inline;
+	width: auto;
+}
+
+.dataTables_info {
+	float: none;
 }
 
 .dataTables_filter {
@@ -169,10 +196,12 @@ input[type="submit"]  {
 .paginationContainer {
 	text-align:center;
 	margin:15px 0;
+	float: none;
 }
 
 .paginationContainer a {
 	margin:0 15px;
+	float: none;
 }
 
 .paginate_disabled_previous,
