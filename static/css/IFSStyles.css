@@ -102,6 +102,13 @@ form {
 	height: 100%;
 }
 
+#example_info {
+	display: inline !important;
+	width: auto !important;
+	background: none !important;
+	float: none !important;
+}
+
 #tails,
 #tailInfo,
 #airline {
@@ -208,16 +215,16 @@ input[type="submit"]  {
 	float: none;
 }
 
-.paginate_disabled_previous,
-.paginate_enabled_previous,
-.paginate_disabled_next,
-.paginate_enabled_next,
+a.paginate_disabled_previous,
+a.paginate_enabled_previous,
+a.paginate_disabled_next,
+a.paginate_enabled_next,
 .btnPrevious,
 .btnNext,
-.paginate_disabled_previous:hover,
-.paginate_enabled_previous:hover,
-.paginate_disabled_next:hover,
-.paginate_enabled_next:hover,
+a.paginate_disabled_previous:hover,
+a.paginate_enabled_previous:hover,
+a.paginate_disabled_next:hover,
+a.paginate_enabled_next:hover,
 .btnPrevious:hover,
 .btnNext:hover {
 	display: inline-block;
@@ -234,24 +241,24 @@ input[type="submit"]  {
 	line-height: 1.8em;
 }
 
-.paginate_disabled_previous,
-.paginate_disabled_next,
+a.paginate_disabled_previous,
+a.paginate_disabled_next,
 .btnPrevious.disabled,
 .btnNext.disabled {
 	opacity: 0.3;
 	cursor: inherit;
 }
 
-.paginate_disabled_previous:before,
-.paginate_enabled_previous:before,
+a.paginate_disabled_previous:before,
+a.paginate_enabled_previous:before,
 .btnPrevious:before,
 .btnPrevious.diabled:before {
 	display: block;
 	content: "\f053";
 }
 
-.paginate_disabled_next:before,
-.paginate_enabled_next:before,
+a.paginate_disabled_next:before,
+a.paginate_enabled_next:before,
 .btnNext:before,
 .btnNext.disabled:before {
 	display: block;
